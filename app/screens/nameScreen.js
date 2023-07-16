@@ -6,55 +6,82 @@ import {
   Text,
   View,
   Button,
+  Dimensions,
 } from "react-native";
+import CustButton from "../Components/Button";
 
 function NameScreen(props) {
   const [fName, setFName] = useState("Jesse");
   const [lName, setLName] = useState("Stevenson");
-
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.title}>
-        <Text>What's your name?</Text>
+    <SafeAreaView style={styles.something}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>What's your name?</Text>
       </View>
-      <View>
+      <View style={styles.nameContainer}>
         <View style={styles.nameInput}>
-          <Text>First Name</Text>
-
-          <Text>Last Name</Text>
-        </View>
-        <View style={styles.nameInput}>
+          <Text style={styles.inputTitle}>First Name</Text>
           <TextInput
-            placeholder={fName}
+            style={styles.inputText}
+            value={fName}
             onChangeText={(varone) => setFName(varone)}
           />
-
+        </View>
+        <View style={styles.nameInput}>
+          <Text style={styles.inputTitle}>Last Name</Text>
           <TextInput
-            placeholder={lName}
-            onChangeText={(vartwo) => setFName(vartwo)}
+            style={styles.inputText}
+            value={lName}
+            onChangeText={(varone) => setLName(varone)}
           />
         </View>
       </View>
-      <Button title="Update" style={styles.button} />
+      <CustButton></CustButton>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  something: {
     backgroundColor: "#fff",
+    borderWidth: 3,
+    borderColor: "black",
     flex: 1,
   },
-  title: {
+  titleContainer: {
     marginTop: 50,
     flexDirection: "row",
-    justifyContent: "center",
+    paddingLeft: "10%",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 25,
+  },
+  nameContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    flexBasis: 50,
+    height: Dimensions.get("screen").height * 0.8,
+    marginTop: 30,
+    marginRight: "10%",
+    marginLeft: "10%",
+    //marginLeft: 50,
   },
   nameInput: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    flexBasis: 50,
-    //marginLeft: 50,
+    borderWidth: 2,
+    borderColor: "lightgrey",
+    paddingRight: 50,
+    height: "120%",
+  },
+  inputText: {
+    fontWeight: "bold",
+    padding: 5,
+  },
+  inputTitle: {
+    color: "grey",
+    paddingTop: 5,
+    paddingLeft: 5,
+    fontWeight: "bold",
   },
   alignName: {
     justifyContent: "center",

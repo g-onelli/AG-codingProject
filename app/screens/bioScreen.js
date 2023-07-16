@@ -6,50 +6,81 @@ import {
   Text,
   View,
   Button,
+  Dimensions,
+  Keyboard,
 } from "react-native";
+import CustButton from "../Components/Button";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function BioScreen(props) {
-  const [bio, setBio] = useState("I like dogs.");
-
+  const [bio, setBio] = useState(
+    "Write a little bit about yourself. Do you like chatting? Are you a smoker? Do you bring pets with you? Etc."
+  );
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.title}>
-        <Text>What type of passenger are you?</Text>
+    <SafeAreaView style={styles.something}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>What type of passenger are you?</Text>
       </View>
-      <View>
-        <View style={styles.nameInput}>
-          <TextInput
-            placeholder={bio}
-            onChangeText={(varone) => setBio(varone)}
-          />
-        </View>
+
+      <TouchableWithoutFeedback
+        onPress={Keyboard.dismiss}
+        accessible={false}
+        style={styles.nameInput}
+      >
+        <TextInput
+          style={styles.inputText}
+          placeholder={bio}
+          placeholderTextColor="black"
+          multiline={true}
+          maxLength={4}
+          onChangeText={(varone) => setBio(varone)}
+        />
+      </TouchableWithoutFeedback>
+      <View style={styles.buttonContainer}>
+        <CustButton></CustButton>
       </View>
-      <Button title="Update" style={styles.button} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  something: {
     backgroundColor: "#fff",
+    borderWidth: 3,
+    borderColor: "black",
     flex: 1,
   },
-  title: {
+  titleContainer: {
     marginTop: 50,
     flexDirection: "row",
-    justifyContent: "center",
+    paddingLeft: "10%",
+    paddingRight: "10%",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 25,
   },
   nameInput: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    flexBasis: 50,
-    //marginLeft: 50,
+    margin: "10%",
+    paddingRight: 50,
+    height: 200,
+    width: 300,
+    backgroundColor: "rgba(220,220,220,.1)",
   },
-  alignName: {
-    justifyContent: "center",
+  inputText: {
+    fontWeight: "bold",
+
+    height: 200,
+    width: 300,
   },
-  button: {
-    backgroundColor: "blue",
+  inputTitle: {
+    color: "grey",
+    paddingTop: 5,
+    paddingLeft: 5,
+    fontWeight: "bold",
+  },
+  buttonContainer: {
+    marginTop: "20%",
   },
 });
 

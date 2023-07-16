@@ -8,6 +8,9 @@ import PhoneScreen from "../screens/phoneScreen";
 import EmailScreen from "../screens/emailScreen";
 
 const page = {
+  Bio: {
+    screen: BioScreen,
+  },
   Home: {
     screen: homeScreen,
   },
@@ -19,9 +22,6 @@ const page = {
   },
   Phone: {
     screen: PhoneScreen,
-  },
-  Bio: {
-    screen: BioScreen,
   },
 };
 
