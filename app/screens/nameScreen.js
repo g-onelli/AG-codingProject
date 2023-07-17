@@ -10,9 +10,14 @@ import {
 } from "react-native";
 import CustButton from "../Components/Button";
 
-function NameScreen(props) {
+function NameScreen({ navigation }) {
   const [fName, setFName] = useState("Jesse");
   const [lName, setLName] = useState("Stevenson");
+  function sendData() {
+    let nameVar = fName + " " + lName;
+    navigation.navigate("Profile", { nVar: nameVar });
+  }
+
   return (
     <SafeAreaView style={styles.something}>
       <View style={styles.titleContainer}>
@@ -36,7 +41,9 @@ function NameScreen(props) {
           />
         </View>
       </View>
-      <CustButton></CustButton>
+      <View style={styles.buttonContainer}>
+        <CustButton functPass={sendData}></CustButton>
+      </View>
     </SafeAreaView>
   );
 }
@@ -83,11 +90,8 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     fontWeight: "bold",
   },
-  alignName: {
-    justifyContent: "center",
-  },
-  button: {
-    backgroundColor: "blue",
+  buttonContainer: {
+    marginTop: "60%",
   },
 });
 

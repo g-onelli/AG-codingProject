@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 
-function ProTouchLong({ textVal, titleVal }) {
+function ProTouchLong({ textVal, titleVal, functPass }) {
   return (
-    <TouchableOpacity /*onPress={functPass}*/>
+    <TouchableOpacity onPress={functPass}>
       <View style={styless.conWhole}>
         <View>
           <Text style={styless.titleText}>{titleVal}</Text>

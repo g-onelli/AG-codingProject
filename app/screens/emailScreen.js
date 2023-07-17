@@ -10,8 +10,13 @@ import {
 } from "react-native";
 import CustButton from "../Components/Button";
 
-function EmailScreen(props) {
+function EmailScreen({ navigation }) {
   const [eAddress, setAddress] = useState("gonelli@gmail.com");
+
+  function sendData() {
+    navigation.navigate("Profile", { eVar: eAddress });
+  }
+
   return (
     <SafeAreaView style={styles.something}>
       <View style={styles.titleContainer}>
@@ -28,7 +33,9 @@ function EmailScreen(props) {
           />
         </View>
       </View>
-      <CustButton></CustButton>
+      <View style={styles.buttonContainer}>
+        <CustButton functPass={sendData}></CustButton>
+      </View>
     </SafeAreaView>
   );
 }
@@ -75,11 +82,8 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     fontWeight: "bold",
   },
-  alignName: {
-    justifyContent: "center",
-  },
-  button: {
-    backgroundColor: "blue",
+  buttonContainer: {
+    marginTop: "60%",
   },
 });
 

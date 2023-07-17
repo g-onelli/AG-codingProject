@@ -12,10 +12,13 @@ import {
 import CustButton from "../Components/Button";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-function BioScreen(props) {
+function BioScreen({ navigation }) {
   const [bio, setBio] = useState(
-    "Write a little bit about yourself. Do you like chatting? Are you a smoker? Do you bring pets with you? Etc."
+    "I like driving cars and SUVs. After years of practice I am a good passenger navigator as long as we don't leave before my gps begins telling me directions."
   );
+  function sendData() {
+    navigation.navigate("Profile", { bVar: bio });
+  }
   return (
     <SafeAreaView style={styles.something}>
       <View style={styles.titleContainer}>
@@ -29,7 +32,7 @@ function BioScreen(props) {
       >
         <TextInput
           style={styles.inputText}
-          placeholder={bio}
+          placeholder="Write a little bit about yourself. Do you like chatting? Are you a smoker? Do you bring pets with you? Etc."
           placeholderTextColor="black"
           multiline={true}
           maxLength={4}
@@ -37,7 +40,7 @@ function BioScreen(props) {
         />
       </TouchableWithoutFeedback>
       <View style={styles.buttonContainer}>
-        <CustButton></CustButton>
+        <CustButton functPass={sendData}></CustButton>
       </View>
     </SafeAreaView>
   );

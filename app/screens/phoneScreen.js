@@ -7,31 +7,50 @@ import {
   View,
   Button,
   Dimensions,
+  Keyboard,
 } from "react-native";
 import CustButton from "../Components/Button";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-function PhoneScreen(props) {
-  const [pNum, setPNum] = useState("(201) 404-8372");
+function PhoneScreen({ navigation }) {
+  const [pNum, setPNum] = useState("2014048372");
+  const displayPhone =
+    "(" + pNum.slice(0, 3) + ") " + pNum.slice(3, 6) + "-" + pNum.slice(6);
+  function sendData() {
+    let pNumVar =
+      "(" + pNum.slice(0, 3) + ") " + pNum.slice(3, 6) + "-" + pNum.slice(6);
+    navigation.navigate("Profile", { pVar: pNumVar });
+  }
   return (
     <SafeAreaView style={styles.something}>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>What's your email?</Text>
+        <Text style={styles.title}>What's your phone number?</Text>
       </View>
+
       <View style={styles.nameContainer}>
         <View style={styles.nameInput}>
-          <Text style={styles.inputTitle}>Your email address</Text>
+          <Text style={styles.inputTitle}>Your phone number</Text>
+
           <TextInput
-            inputMode="email"
+            keyboardType="phone-pad"
             placeholderTextColor="black"
             style={styles.inputText}
-            placeholder={pNum}
+            placeholder={displayPhone}
+            maxLength={10}
             onChangeText={(varone) =>
               varone != null ? setPNum(varone) : setPNum("(201) 404-8372")
             }
           />
         </View>
       </View>
-      <CustButton></CustButton>
+      <TouchableWithoutFeedback
+        onPress={Keyboard.dismiss}
+        accessible={false}
+        style={styles.disKeyboard}
+      ></TouchableWithoutFeedback>
+      <View style={styles.buttonContainer}>
+        <CustButton functPass={sendData}></CustButton>
+      </View>
     </SafeAreaView>
   );
 }
@@ -78,11 +97,13 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     fontWeight: "bold",
   },
-  alignName: {
-    justifyContent: "center",
+  buttonContainer: {
+    marginTop: "37%",
   },
-  button: {
-    backgroundColor: "blue",
+  disKeyboard: {
+    marginTop: 15,
+    width: "100%",
+    height: "20%",
   },
 });
 

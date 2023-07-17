@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
-function CustButton({}) {
+function CustButton({ functPass }) {
   return (
-    <TouchableOpacity /*onPress={functPass}*/>
+    <TouchableOpacity onPress={functPass}>
       <View style={styless.container}>
         <Text style={styless.textVal}>Update</Text>
       </View>
