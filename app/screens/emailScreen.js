@@ -8,13 +8,13 @@ import {
   Button,
   Dimensions,
 } from "react-native";
-import CustButton from "../Components/Button";
+import CustButton from "../Components/cusButton";
 
 function EmailScreen({ navigation }) {
   const [eAddress, setAddress] = useState("gonelli@gmail.com");
 
   function sendData() {
-    navigation.navigate("Profile", { eVar: eAddress });
+    navigation.navigate("Home", { eVar: eAddress });
   }
 
   return (

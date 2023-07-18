@@ -9,7 +9,7 @@ import {
   Dimensions,
   Keyboard,
 } from "react-native";
-import CustButton from "../Components/Button";
+import CustButton from "../Components/cusButton";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function BioScreen({ navigation }) {
@@ -17,7 +17,7 @@ function BioScreen({ navigation }) {
     "I like driving cars and SUVs. After years of practice I am a good passenger navigator as long as we don't leave before my gps begins telling me directions."
   );
   function sendData() {
-    navigation.navigate("Profile", { bVar: bio });
+    navigation.navigate("Home", { bVar: bio });
   }
   return (
     <SafeAreaView style={styles.something}>
@@ -49,8 +49,6 @@ function BioScreen({ navigation }) {
 const styles = StyleSheet.create({
   something: {
     backgroundColor: "#fff",
-    borderWidth: 3,
-    borderColor: "black",
     flex: 1,
   },
   titleContainer: {

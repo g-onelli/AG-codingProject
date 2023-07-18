@@ -8,14 +8,14 @@ import {
   Button,
   Dimensions,
 } from "react-native";
-import CustButton from "../Components/Button";
+import CustButton from "../Components/cusButton";
 
 function NameScreen({ navigation }) {
   const [fName, setFName] = useState("Jesse");
   const [lName, setLName] = useState("Stevenson");
   function sendData() {
     let nameVar = fName + " " + lName;
-    navigation.navigate("Profile", { nVar: nameVar });
+    navigation.navigate("Home", { nVar: nameVar });
   }
 
   return (

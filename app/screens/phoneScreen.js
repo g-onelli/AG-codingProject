@@ -9,7 +9,7 @@ import {
   Dimensions,
   Keyboard,
 } from "react-native";
-import CustButton from "../Components/Button";
+import CustButton from "../Components/cusButton";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function PhoneScreen({ navigation }) {
@@ -19,7 +19,7 @@ function PhoneScreen({ navigation }) {
   function sendData() {
     let pNumVar =
       "(" + pNum.slice(0, 3) + ") " + pNum.slice(3, 6) + "-" + pNum.slice(6);
-    navigation.navigate("Profile", { pVar: pNumVar });
+    navigation.navigate("Home", { pVar: pNumVar });
   }
   return (
     <SafeAreaView style={styles.something}>
