@@ -17,6 +17,7 @@ function HomeScreen({ navigation, route }) {
   let phoneNum = route.params?.pVar;
   let eAddress = route.params?.eVar;
   let biography = route.params?.bVar;
+  let profPic = route.params?.pickVar;
 
   //const []
   return (
@@ -40,7 +41,11 @@ function HomeScreen({ navigation, route }) {
         funcPass={() => {
           navigation.navigate("Profile");
         }}
-        imgURL={require("../assets/AG-Project-DummyProfile.jpg")}
+        imgURL={
+          profPic == null
+            ? require("../assets/AG-Project-DummyProfile.jpg")
+            : { uri: profPic }
+        }
       ></HomeProfileButton>
 
       <View style={styles.container}>

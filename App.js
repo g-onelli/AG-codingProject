@@ -12,7 +12,7 @@ import BioScreen from "./app/screens/bioScreen";
 import ProfileScreen from "./app/screens/profileScreen";
 
 const stackNav = createNativeStackNavigator();
-LogBox.ignoreAllLogs();
+//LogBox.ignoreAllLogs(); //surpresses all warning logs, only utilize for demo purposes
 
 export default function App() {
   return (

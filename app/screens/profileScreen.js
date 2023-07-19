@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import EditProfileButton from "../Components/editPImg";
 import CustButton from "../Components/cusButton";
-import { launchImageLibrary } from "react-native-image-picker";
+import * as ImagePicker from "expo-image-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function ProfileScreen({ navigation }) {
   const [pickerVar, setPicker] = useState("");
 
-  const getImage = () => {
+  const getImage = async () => {
     const options = {
       selectionLimit: 1,
-      mediaType: "photo",
+      path: "Images",
       includeBase64: false,
     };
-    launchImageLibrary(options, (response) => {
-      setPicker(response.assets[0].uri).catch((error) => {
-        console.error(error);
-      });
-    });
+    let result = await ImagePicker.launchImageLibraryAsync(options);
+    if (!result.canceled) {
+      setPicker(result.assets[0].uri);
+    }
   };
 
   return (
@@ -37,7 +36,9 @@ function ProfileScreen({ navigation }) {
         ></EditProfileButton>
       </View>
       <View>
-        <CustButton functPass={() => navigation.navigate("Home")}></CustButton>
+        <CustButton
+          functPass={() => navigation.navigate("Home", { pickVar: pickerVar })}
+        ></CustButton>
       </View>
     </SafeAreaView>
   );
