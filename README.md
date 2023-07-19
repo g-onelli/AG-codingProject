@@ -24,9 +24,9 @@ Hours Spent on Project: 50
  <ins> Pre-requisites for Physical Device Demo</ins>
 - Expo Go app (available in App Store and Google Play Store)
 
-  <ins>Pre-requisites for iPhone Simulator (see additional notes)</ins>
-  - Xcode
-  - Xcode Command Line Tools
+<ins>Pre-requisites for iPhone Simulator (see additional notes)</ins>
+- Xcode
+- Xcode Command Line Tools
 
 1. Download repo code
 2. Open code in text editor (VS Code recommended)
