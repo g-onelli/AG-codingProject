@@ -10,7 +10,7 @@ function HomeScreen({ navigation, route }) {
   const [phoneVar, setPhone] = useState("(123) 456-7890");
   const [emailVar, setEmail] = useState("gonelli@gmail.com");
   const [bioVar, setBio] = useState(
-    "I like taking my dogs on long walks and driving at a legal speed."
+    "I like taking my dogs on long walks and driving around in my car."
   );
 
   let fullName = route.params?.nVar;

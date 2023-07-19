@@ -13,7 +13,7 @@ import CustButton from "../Components/cusButton";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function PhoneScreen({ navigation }) {
-  const [pNum, setPNum] = useState("2014048372");
+  const [pNum, setPNum] = useState("1234567890");
   const displayPhone =
     "(" + pNum.slice(0, 3) + ") " + pNum.slice(3, 6) + "-" + pNum.slice(6);
   function sendData() {

@@ -11,8 +11,8 @@ import {
 import CustButton from "../Components/cusButton";
 
 function NameScreen({ navigation }) {
-  const [fName, setFName] = useState("Jesse");
-  const [lName, setLName] = useState("Stevenson");
+  const [fName, setFName] = useState("Gabriela");
+  const [lName, setLName] = useState("Onelli");
   function sendData() {
     let nameVar = fName + " " + lName;
     navigation.navigate("Home", { nVar: nameVar });

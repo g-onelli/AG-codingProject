@@ -6,7 +6,7 @@ import * as ImagePicker from "expo-image-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function ProfileScreen({ navigation }) {
-  const [pickerVar, setPicker] = useState("");
+  const [pickerVar, setPicker] = useState(null);
 
   const getImage = async () => {
     const options = {
@@ -28,7 +28,7 @@ function ProfileScreen({ navigation }) {
       <View>
         <EditProfileButton
           imgURL={
-            pickerVar == ""
+            pickerVar == null
               ? require("../assets/AG-Project-DummyProfile.jpg")
               : { uri: pickerVar }
           }

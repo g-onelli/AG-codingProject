@@ -14,7 +14,7 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function BioScreen({ navigation }) {
   const [bio, setBio] = useState(
-    "I like driving cars and SUVs. After years of practice I am a good passenger navigator as long as we don't leave before my gps begins telling me directions."
+    "I like taking my dogs on long walks and driving around in my car."
   );
   function sendData() {
     navigation.navigate("Home", { bVar: bio });
