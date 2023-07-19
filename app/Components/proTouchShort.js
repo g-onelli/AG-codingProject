@@ -11,7 +11,7 @@ function ProTouchShort({ textVal, titleVal, functPass }) {
         </View>
         <View style={styless.conInfo}>
           <Text style={styless.infoText}>{textVal}</Text>
-          <Icon name="right" size={20} borderBottomColor="black" />
+          <Icon name="right" size={20} color="grey" />
         </View>
       </View>
     </TouchableOpacity>
@@ -31,14 +31,14 @@ const styless = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 10,
     borderBottomColor: "lightgrey",
-    borderBottomWidth: 2,
-    backgroundColor: "dogerblue",
+    borderBottomWidth: 1,
   },
   infoText: {
     color: "black",
   },
   titleText: {
     color: "grey",
+    fontSize: 13,
   },
 });
 export default ProTouchShort;

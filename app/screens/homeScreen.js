@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-import {
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  View,
-  Dimensions,
-  Image,
-} from "react-native";
+import { Text, SafeAreaView, StyleSheet, View } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 import ProTouchLong from "../Components/proTouchLong";
 import ProTouchShort from "../Components/proTouchShort";
-import { TouchableHighlight } from "react-native-gesture-handler";
 import HomeProfileButton from "../Components/homePImg";
 
 function HomeScreen({ navigation, route }) {
@@ -31,6 +23,18 @@ function HomeScreen({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.profView}>
         <Text style={styles.profTitle}>Edit Profile</Text>
+      </View>
+      <View
+        style={{
+          flexDirection: "row-reverse",
+          borderRadius: 3,
+          borderColor: "black",
+          marginLeft: 125,
+          marginBottom: -40,
+          zIndex: 1,
+        }}
+      >
+        <Icon name="pencil-outline" size={20} style={styles.profIcon} />
       </View>
       <HomeProfileButton
         funcPass={() => {
@@ -87,15 +91,32 @@ const styles = StyleSheet.create({
     color: "grey",
     marginLeft: "10%",
     marginTop: 10,
+    marginBottom: 40,
   },
   profTitle: {
     fontSize: 25,
     fontWeight: "bold",
     color: "cornflowerblue",
     margin: 10,
+    marginBottom: 50,
   },
   profView: {
     alignItems: "center",
+  },
+  profImage: {
+    justifyContent: "flex-end",
+  },
+  profIcon: {
+    position: "absolute",
+    zIndex: 1,
+    alignSelf: "center",
+    padding: 5,
+    borderRadius: 15,
+    shadowColor: "black",
+    color: "cornflowerblue",
+    borderWidth: 0,
+    overflow: "hidden",
+    backgroundColor: "#fff",
   },
 });
 export default HomeScreen;

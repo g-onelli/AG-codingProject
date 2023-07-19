@@ -1,12 +1,12 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
-import { TouchableHighlight } from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function HomeProfileButton({ funcPass, imgURL }) {
   return (
-    <TouchableHighlight style={styles.profContainer} onPress={funcPass}>
+    <TouchableWithoutFeedback style={styles.profContainer} onPress={funcPass}>
       <Image style={styles.profImage} source={imgURL}></Image>
-    </TouchableHighlight>
+    </TouchableWithoutFeedback>
   );
 }
 
