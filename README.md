@@ -6,7 +6,7 @@ that it was taking in user data values and saving them to the profile page.
 
 Hours Spent on Project: 50
 
-Tech Specs
+<ins>Tech Specs</ins>
 - Base app: React Native Expo
 - Development Device: iPhone SE
 - iOS: v16.5.1(c)
