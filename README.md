@@ -1,7 +1,7 @@
 # AG-codingProject
 
 <ins>Overview</ins>
-A project developed within seven days from 07/12/2023 to 07/19/2023 that was meant to mimic the appearance of a provide wireframe of a profile app. This app did not require actual functionality, only the appearance of
+A project developed within seven days from 07/12/2023 to 07/19/2023 that was meant to mimic the appearance of a provided profile app wireframe. This app did not require actual functionality, only the appearance of
 that it was taking in user data values and saving them to the profile page.
 
 Hours Spent on Project: 50
