@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, SafeAreaView } from "react-native";
+import { StyleSheet, LogBox } from "react-native";
 import React from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,9 +10,9 @@ import PhoneScreen from "./app/screens/phoneScreen";
 import EmailScreen from "./app/screens/emailScreen";
 import BioScreen from "./app/screens/bioScreen";
 import ProfileScreen from "./app/screens/profileScreen";
-import { HeaderTitle } from "react-navigation-stack";
 
 const stackNav = createNativeStackNavigator();
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
