@@ -16,15 +16,16 @@ Hours Spent on Project: 50
 - React Native Cli: v2.0.1
 
 <ins>Installation/Running Instructions</ins>
-  Pre-requisites for General Use
+  
+    <ins>Pre-requisites for General Use</ins>
 - Node.js (LTS releases strongly recommended)
 - Git
 - Watchman (only for Linux and macOS users)
 
- <ins> Pre-requisites for Physical Device Demo</ins>
+   <ins> Pre-requisites for Physical Device Demo</ins>
 - Expo Go app (available in App Store and Google Play Store)
 
-<ins>Pre-requisites for iPhone Simulator (see additional notes)</ins>
+  <ins>Pre-requisites for iPhone Simulator (see additional notes)</ins>
 - Xcode
 - Xcode Command Line Tools
 
